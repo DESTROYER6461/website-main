@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: url('/static/bg.jpg') center/cover no-repeat;
+}
+
+.left-side {
+    width: 55%;
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.05);
+}
+
+.profile-panel {
+    width: 45%;
+    padding: 40px;
+    background: #ffffffdd;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-panel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background: #0060d4;
+}
+
+.logout-btn {
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background: #ff3b30;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background: #c62820;
+}
+</style>
+
+<div class="left-side"></div>
+
+<div class="profile-panel">
+    <h2>User Profile</h2>
+
+    <form action="/update_profile" method="POST">
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" name="fullname" value="{{ user.fullname }}">
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" value="{{ user.email }}">
+        </div>
+
+        <div class="input-group">
+            <label>Phone</label>
+            <input type="text" name="phone" value="{{ user.phone }}">
+        </div>
+
+        <div class="input-group">
+            <label>Address</label>
+            <input type="text" name="address" value="{{ user.address }}">
+        </div>
+
+        <div class="input-group">
+            <label>Bio</label>
+            <textarea name="bio">{{ user.bio }}</textarea>
+        </div>
+
+        <h3>Social Media</h3>
+
+        <div class="input-group">
+            <label>Instagram</label>
+            <input type="text" name="instagram" value="{{ user.instagram }}">
+        </div>
+
+        <div class="input-group">
+            <label>LinkedIn</label>
+            <input type="text" name="linkedin" value="{{ user.linkedin }}">
+        </div>
+
+        <div class="input-group">
+            <label>GitHub</label>
+            <input type="text" name="github" value="{{ user.github }}">
+        </div>
+
+        <button class="save-btn" type="submit">Save Changes</button>
+
+        <a class="logout-btn" href="/logout">Logout</a>
+
+    </form>
+</div>
+
+</body>
+</html>

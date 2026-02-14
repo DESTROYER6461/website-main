@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: url('/static/bg.jpg') center/cover no-repeat;
+}
+
+.left-side {
+    width: 55%;
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.05);
+}
+
+.profile-panel {
+    width: 45%;
+    padding: 40px;
+    background: #ffffffdd;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-panel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background: #0060d4;
+}
+
+.logout-btn {
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background: #ff3b30;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background: #c62820;
+}
